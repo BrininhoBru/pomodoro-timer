@@ -12,15 +12,29 @@
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+.pattern-lines-animated {
+  background-image: repeating-linear-gradient(
+    45deg,
+    #00bc7d15,
+    #00bc7d15 1px,
+    transparent 1px,
+    transparent 20px
+  );
+  background-size: 40px 40px;
+  animation: movePattern 5s linear infinite;
+}
+
+@keyframes movePattern {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 40px 40px;
+  }
 }
